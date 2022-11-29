@@ -30,7 +30,7 @@
 	              <h3 class="login-heading mb-5">KNU_POS</h3>
 	
 	              <!-- Sign In Form -->
-	              <form class="validation-form" method="post" action="./jsp/personal_Info.jsp" novalidate>
+	              <form class="validation-form" method="post" action="./jsp/main.jsp" novalidate>
 	                <div class="form-group mb-3">
 	                  <i class="fa-solid fa-user m-1"></i><label class="mb-1">ID</label>
 	                  <input type="text" class="form-control" id="floatingInput" required>
