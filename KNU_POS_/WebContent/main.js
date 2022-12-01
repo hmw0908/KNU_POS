@@ -34,6 +34,4 @@ function print_menu(){
         }
       
     }
-    
-   
 }

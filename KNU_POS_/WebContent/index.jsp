@@ -6,6 +6,18 @@
 <!-- 뷰포트와 관련된 설정(반응형 웹) -->
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>KNU_POS</title>
+<!-- 로그인 되어 ID가 존재하는 경우 확인하는 세션 체크 -->
+<script  type="text/javascript">
+   <%--  var user_id = "<%=(String)session.getAttribute("user_id")%>"; --%>
+   function submit2(frm) { 
+	    frm.action='.login_check.jsp'; 
+	    frm.submit();
+	    
+	    frm.action='.main.jsp'; 
+	    frm.submit();
+	    return true; 
+	  } 
+</script>
 <!-- bootstrap CSS 추가 -->
 <link rel="stylesheet" href="./css/bootstrap.min.css"/>
 <!-- Custom CSS 추가 -->
@@ -30,24 +42,18 @@
 	              <h3 class="login-heading mb-5">KNU_POS</h3>
 	
 	              <!-- Sign In Form -->
-	              <form class="validation-form" method="post" action="./jsp/main.jsp" novalidate>
+	              <form class="validation-form" name="tran" method="post" action="./login_check.jsp">
 	                <div class="form-group mb-3">
 	                  <i class="fa-solid fa-user m-1"></i><label class="mb-1">ID</label>
-	                  <input type="text" class="form-control" id="floatingInput" required>
+	                  <input type="text" class="form-control" name="user_id" id="floatingInput" >
 	                </div>
 	                <div class="form-group mb-3">
 	                  <i class="fa-solid fa-key m-1"></i><label class="mb-1">PASSWORD</label>
-	                  <input type="password" class="form-control" id="floatingPassword" required>
+	                  <input type="password" class="form-control" name="user_pw" id="floatingPassword" >
 	                </div>
 	
-	                <!--<div class="form-check mb-3">
-	                  <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck" required>
-	                  <label class="form-check-label" for="rememberPasswordCheck">
-	                    Remember password
-	                  </label>
-	                </div>-->
 	                <div class="d-grid mt-5">
-	                  <button class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2" type="submit">LOGIN</button>
+	                  <button class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2" type="submit" >LOGIN</button>
 	                  <a class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2" data-toggle="modal" href="#newRegisterModal">NEW CREATE</a>
 	                  <div class="text-center">
 	                    <a class="small mt-5" href="#">Forgot password?</a>

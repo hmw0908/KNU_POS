@@ -57,8 +57,6 @@
             width:95%;
             border: 2px solid #000000;
             height: 50px;
-     
-
         }
     
 
@@ -69,7 +67,6 @@
     <title><%=request.getParameter("user") %></title>
 </head>
 <body>
-<jsp:include page="./top.jsp"/>
     <h1 name="tableName" id="tableName" cols="10" rows="10"> 테이블 이름 </h1>
     <div class = "view">
     <div class="menu_list"  style=" height :100%"> 
@@ -91,30 +88,16 @@
         </div>
     </div>
     
-  
-
 
     <div class="Right" >
-		//버튼 textContext에 이름과가격을 넣음으로서 두개의 정보를 다 사용할 수 있게했다.
-        <button id="cms"  onclick="menu_click(this.id)"> 치즈 무뼈 닭발 셋트,25000</button>
-        <button id="gms" onclick="menu_click(this.id)"> 직화 무뼈 닭발 셋트,23000</button>
-        <button id="kds" onclick="menu_click(this.id)"> 국물 닭발 셋트,24000</button>
-        <button id="gts" onclick="menu_click(this.id)"> 직화 통닭발 셋트,21000</button>
-        <button id="gos" onclick="menu_click(this.id)"> 직화 오돌뼈 셋트,16000</button>
-        <button id="cm" onclick="menu_click(this.id)"> 치즈 무뼈 닭발,19000</button>
-        <button id="gm" onclick="menu_click(this.id)"> 직화 무뼈 닭발,16000</button>
-        <button id="kd" onclick="menu_click(this.id)"> 국물 닭발,18000</button>
-        <button id="gt" onclick="menu_click(this.id)"> 직화 통닭발,14000</button>
-        <button id ="go" onclick="menu_click(this.id)"> 직화 오돌뼈,14000</button>
+        <button id="cms"  onclick="menu_click(this.id)"> 소라빵,2500</button>
+        <button id="gms" onclick="menu_click(this.id)"> 단팥빵,1500</button>
+        <button id="kds" onclick="menu_click(this.id)"> 소보로빵,2000</button>
+        <button id="gts" onclick="menu_click(this.id)"> 크림빵,1800</button>
     </div>
 
     </div>
     
-    
-
-
-
-
     <script src="menu.js"></script>
 </body>
 </html>
