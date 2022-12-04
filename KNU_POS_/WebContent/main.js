@@ -11,7 +11,7 @@ print_menu();
  //menu.html으로 이동한다.
 function go_menu(tableId){
     const content =document.getElementById(tableId).innerText; 
-    location.href="menu.jsp?"+ content;
+    location.href="menu.html?"+ content;
 }
 
 //메뉴 리스트에 있는 내용을 textarea에 저장한다.

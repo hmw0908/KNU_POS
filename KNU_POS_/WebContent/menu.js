@@ -67,7 +67,7 @@ function complete(){
     let tableAreaName =tableName+"List";
     console.log("컴플리트 버튼 활성화 됨");
     
-    url =encodeURI ="main.jsp?"+1+"?"+tableAreaName+"?"+tableName;
+    url =encodeURI ="main.html?"+1+"?"+tableAreaName+"?"+tableName;
     location.href=url;
     console.log(url);
 }
