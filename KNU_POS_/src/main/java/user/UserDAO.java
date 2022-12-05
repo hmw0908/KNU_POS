@@ -19,7 +19,7 @@ public class UserDAO {
 			conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
+		} 
 	}
 	
 	public int login(String userID, String userPassword) {
