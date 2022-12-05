@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" 
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,15 +46,15 @@
 	              <form class="validation-form" name="tran" method="post" action="./login_check.jsp">
 	                <div class="form-group mb-3">
 	                  <i class="fa-solid fa-user m-1"></i><label class="mb-1">ID</label>
-	                  <input type="text" class="form-control" name="user_id" id="floatingInput" >
+	                  <input type="text" class="form-control" placeholder="아이디" name="userID" id="floatingInput" >
 	                </div>
 	                <div class="form-group mb-3">
 	                  <i class="fa-solid fa-key m-1"></i><label class="mb-1">PASSWORD</label>
-	                  <input type="password" class="form-control" name="user_pw" id="floatingPassword" >
+	                  <input type="password" class="form-control" placeholder="비밀번호" name="userPassword" id="floatingPassword" >
 	                </div>
 	
 	                <div class="d-grid mt-5">
-	                  <button class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2" type="submit" >LOGIN</button>
+	                  <button class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2" type="submit" value="로그인">LOGIN</button>
 	                  <a class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2" data-toggle="modal" href="#newRegisterModal">NEW CREATE</a>
 	                  <div class="text-center">
 	                    <a class="small mt-5" href="#">Forgot password?</a>

@@ -10,7 +10,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title><%=request.getParameter("user") %></title>
+      <title></title>
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -43,7 +43,7 @@
                <div class="sidebar_blog_1">
                   <div class="sidebar-header">
                      <div class="logo_section">
-                        <a href="index.html"><img class="logo_icon img-responsive" src="img/knu3.jpg" alt="#" /></a>
+                        <a href="index.jsp"><img class="logo_icon img-responsive" src="img/knu3.jpg" alt="#" /></a>
                      </div>
                   </div>
                   <div class="sidebar_user_info">
@@ -51,7 +51,7 @@
                      <div class="user_profle_side">
                         <div class="user_img"><img class="img-responsive" src="img/knu3.jpg" alt="#" /></div>
                         <div class="user_info">
-                           <h6>John David</h6>
+                           <h6>매장명</h6>
                            <p><span class="online_animation"></span> Online</p>
                         </div>
                      </div>
@@ -73,8 +73,8 @@
 			            </table>
 			        </div>
 			        <div>
-			            <input type="text" id="sum"> 총 가격</input>
-			            <button id="btn_com" style="width: 100px;" onclick="complete()">주문 완료</button>
+                  총 가격<label id="sum"> </label>
+			            <br><button id="btn_com" style="width: 100px;" onclick="complete()">주문 완료</button>
 			            <button id="btn_reset" style="width: 100px;" onclick="reset()">주문 초기화</button>
 			        </div>
 			    </div>
@@ -90,7 +90,7 @@
                      <div class="full">
                         <button type="button" id="sidebarCollapse" class="sidebar_toggle"><i class="fa fa-bars"></i></button>
                         <div class="logo_section">
-                           <a href="index.html"><img class="img-responsive" src="img/knu3.jpg" alt="#" /></a>
+                           <a href="index.jsp"><img class="img-responsive" src="img/knu3.jpg" alt="#" /></a>
                         </div>
                         <div class="right_topbar">
                            <div class="icon_info">
@@ -98,6 +98,7 @@
                                  <li>
                                     <a class="dropdown-toggle" data-toggle="dropdown"><img class="img-responsive rounded-circle" src="img/knu3.jpg" alt="#" /><span class="name_user">name</span></a>
                                     <div class="dropdown-menu">
+                                       <a class="dropdown-item" href="PaymentView.jsp">PaymentView</a>
                                        <a class="dropdown-item" href="main.jsp">Back</a>
                                        <a class="dropdown-item" href="index.jsp"><span>Log Out</span> <i class="fa fa-sign-out"></i></a>
                                     </div>
@@ -230,6 +231,10 @@
       <!-- custom js -->
       <script src="js2/custom.js"></script>
       <script src="js2/chart_custom_style1.js"></script>
-      
+      <script>
+         let basket = {};
+         let basketId = 0;
+         let basketTotalPrice = 0;
+         </script>
    </body>
 </html>
