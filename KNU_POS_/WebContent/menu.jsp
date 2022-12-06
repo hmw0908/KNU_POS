@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@page import="java.io.PrintWriter"%>
+<%@page import="catalogue.*"%>
+<%@page import="java.util.ArrayList"%>
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -36,6 +39,16 @@
       <![endif]-->
    </head>
    <body class="dashboard dashboard_1">
+   <% 
+    	String userID = null;
+		if(session.getAttribute("userID") != null){
+			userID = (String) session.getAttribute("userID");
+		}
+		int catalogueID = 1;
+		if(request.getParameter("catalogueID") != null){
+			catalogueID = Integer.parseInt(request.getParameter("catalogueID"));
+		}
+	%>
       <div class="full_container">
          <div class="inner_container">
             <!-- Sidebar  -->
@@ -100,7 +113,7 @@
                                     <div class="dropdown-menu">
                                        <a class="dropdown-item" href="PaymentView.jsp">PaymentView</a>
                                        <a class="dropdown-item" href="main.jsp">Back</a>
-                                       <a class="dropdown-item" href="index.jsp"><span>Log Out</span> <i class="fa fa-sign-out"></i></a>
+                                       <a class="dropdown-item" href="logoutAction.jsp"><span>Log Out</span> <i class="fa fa-sign-out"></i></a>
                                     </div>
                                  </li>
                               </ul>
@@ -121,6 +134,13 @@
                         </div>
                      </div>
                      <div class="row column1">
+                     <%
+                     	CatalogueDAO catalogueDAO = new CatalogueDAO();
+                     	ArrayList<Catalogue> list = catalogueDAO.getList(catalogueID);
+                     	for(int i = 0; i < list.size(); i++){
+                     %>
+                     
+                     <!-- 반복시작 -->
                         <div class="col-md-6 col-lg-3">
                         <button class="button" id="so" onclick="menu_click(this.id)">
                            <div class="full counter_section margin_bottom_30">
@@ -131,13 +151,17 @@
                               </div>
                               <div class="counter_no">
                                  <div class="Right">
-                                    <p class="total_no">소라빵</p>
-                                    <p class="head_couter">￦2500</p>
+                                    <p class="total_no"><%=list.get(i).getCatalogueName() %></p>
+                                    <p class="head_couter">￦<%=list.get(i).getCataloguePrice() %></p>
                                  </div>
                               </div>
                            </div>
                         </button>
                         </div>
+                        <!-- 반복종료 -->
+                       <%
+                        	}
+                     	%>
                         <div class="col-md-6 col-lg-3">
                         <button class="button" id="ch" onclick="menu_click(this.id)">
                            <div class="full counter_section margin_bottom_30">

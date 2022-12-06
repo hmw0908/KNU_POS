@@ -7,18 +7,6 @@
 <!-- 뷰포트와 관련된 설정(반응형 웹) -->
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>KNU_POS</title>
-<!-- 로그인 되어 ID가 존재하는 경우 확인하는 세션 체크 -->
-<script  type="text/javascript">
-   <%--  var user_id = "<%=(String)session.getAttribute("user_id")%>"; --%>
-   function submit2(frm) { 
-	    frm.action='.login_check.jsp'; 
-	    frm.submit();
-	    
-	    frm.action='.main.jsp'; 
-	    frm.submit();
-	    return true; 
-	  } 
-</script>
 <!-- bootstrap CSS 추가 -->
 <link rel="stylesheet" href="./css/bootstrap.min.css"/>
 <!-- Custom CSS 추가 -->
@@ -41,7 +29,6 @@
 	          <div class="row jumbotron">
 	            <div class="col-md-9 col-lg-8 mx-auto">
 	              <h3 class="login-heading mb-5">KNU_POS</h3>
-	
 	              <!-- Sign In Form -->
 	              <form class="validation-form" name="tran" method="post" action="./login_check.jsp">
 	                <div class="form-group mb-3">
@@ -57,7 +44,7 @@
 	                  <button class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2" type="submit" value="로그인">LOGIN</button>
 	                  <a class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2" data-toggle="modal" href="#newRegisterModal">NEW CREATE</a>
 	                  <div class="text-center">
-	                    <a class="small mt-5" href="#">Forgot password?</a>
+	                    <!-- <a class="small mt-5" href="#">Forgot password?</a> -->
 	                  </div>
 	                </div>
 	              </form>
@@ -74,28 +61,35 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="modal">신규지원</h5>
+					<h5 class="modal-title" id="modal">회원가입</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
 				<div class="modal-body">
-					<form class="validation-form" action="newRegisterAction.jsp" method="post">
-					<div>
-						<div class="form-group col-sm-6">
-							<label>개인정보이용동의</label>
-							<textarea class="form-control" name="evaluationContent" placeholder="개인정보를 어쩌구 이러쿵" readonly maxlength="204"></textarea>
-						</div>
-					</div>
+					<form class="validation-form" action="joinAction.jsp" method="post">
 					<div>
 						<div class="form-group col-sm-6">
 							<i class="fa-solid fa-user m-1"></i><label class="mb-1">아이디</label>
-							<input type="text" name="id" class="form-control" maxlength="15" />
+							<input type="text" name="userID" class="form-control" maxlength="15" />
 						</div>
 						<div class="form-group col-sm-6">
 							<i class="fa-solid fa-key m-1"></i><label class="mb-1">비밀번호</label>
-							<input type="text" name="passwd" class="form-control" maxlength="20" />
+							<input type="text" name="userPassword" class="form-control" maxlength="20" />
 						</div>
+						<div class="form-group col-sm-6">
+							<i class="fa-solid fa-user m-1"></i><label class="mb-1">매장명</label>
+							<input type="text" name="userName" class="form-control" maxlength="10" />
+						</div>
+						<div class="form-group col-sm-6">
+							<label class="btn btn-primary">
+							<input type="radio" name="role" class="form-control" autocomplete="off" value="ADMIN" />ADMIN
+							</label>
+							<label class="btn btn-primary">
+							<input type="radio" name="role" class="form-control" autocomplete="off" value="OWNER" checked/>OWNER
+							</label>
+						</div>
+						
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>

@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@page import="java.io.PrintWriter"%>
 <% request.setCharacterEncoding("UTF-8"); %>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -17,6 +18,12 @@
         <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body>
+    <% 
+    	String userID = null;
+		if(session.getAttribute("userID") != null){
+			userID = (String) session.getAttribute("userID");
+		}
+	%>
     	<script src="main.js"></script>
         <!-- Header-->
         <header class="bg-dark py-2">
